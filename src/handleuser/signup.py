@@ -1,18 +1,31 @@
 import json
 import hashlib
 import os
+impo
 
 class Signup:
-    def __init__(self, username, password):
+    def __init__(self, username, password, json_file='userdata/users.json'):
         self.username = username
         self.__password = hashlib.sha256(password.encode()).hexdigest()
-    
-    def add_user(self):
-        json_file = 'userdata/users.json'
+        self.json_file = json_file
 
-        if os.path.exists(json_file):
+
+    def check_user(self):
+        with open(self.json_file, 'r') as file:
+            users = json.load(file)
+        
+        for ids in users:
+            if self.username == users[ids]['username']:
+                print("username taken")
+                return True
+        
+        return False
+
+    def register(self):
+        if self.check_user(): return False
+        if os.path.exists(self.json_file):
             try:
-                with open(json_file, 'r') as f:
+                with open(self.json_file, 'r') as f:
                     users = json.load(f)
                 if not isinstance(users, dict):
                     raise ValueError("Invalid JSON structure.")
@@ -29,8 +42,9 @@ class Signup:
             "password": self.__password
         }
 
-        with open(json_file, 'w') as f:
+        with open(self.json_file, 'w') as f:
             json.dump(users, f, indent=4)
-
         print(f"User {self.username} added successfully with ID {next_id}!")
+        return True
+        
 
