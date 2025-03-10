@@ -18,8 +18,9 @@ def delete_user(data, username):
     if key_to_delete:
         del data[key_to_delete]
         print(f"Deleted user '{username}' ID: {key_to_delete}")
+        return True
     else:
-        print(username, 'not found!')
+        return False
 
 def remove(username, filename):
     data = load_json(filename)
