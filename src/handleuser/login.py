@@ -1,6 +1,5 @@
 import json
 import hashlib
-im
 
 class Login:
     def __init__(self, username:str, password:str, database="userdata/users.json"):

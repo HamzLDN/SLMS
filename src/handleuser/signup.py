@@ -1,10 +1,11 @@
 import json
 import hashlib
 import os
-impo
 
 class Signup:
-    def __init__(self, username, password, json_file='userdata/users.json'):
+    def __init__(self, fullname, email, username, password, json_file='userdata/users.json'):
+        self.fullname = fullname
+        self.email = email
         self.username = username
         self.__password = hashlib.sha256(password.encode()).hexdigest()
         self.json_file = json_file
@@ -38,8 +39,10 @@ class Signup:
         next_id = str(max(numeric_keys, default=0) + 1)
 
         users[next_id] = {
-            "username": self.username,
-            "password": self.__password
+            "Full name":    self.fullname,
+            "email":        self.email,
+            "username":     self.username,
+            "password":     self.__password,
         }
 
         with open(self.json_file, 'w') as f:
@@ -47,4 +50,3 @@ class Signup:
         print(f"User {self.username} added successfully with ID {next_id}!")
         return True
         
-
