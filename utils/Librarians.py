@@ -6,4 +6,4 @@ class Librarian(User):
         if command == "add": library.add_book(book)
         elif command == "remove": library.remove_book(book)
         elif command == "update": library.update_book(book)
-        else: print("Invalid action.")
+        else: print("Cannot apply changes.")
