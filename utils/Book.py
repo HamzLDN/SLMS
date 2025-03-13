@@ -20,7 +20,7 @@ class Book:
 
     @property
     def author_name(self):
-        return self._author_name #Read author Only
+        return self._author_name #Read author Only polymorphism 
         
     @property
     def status(self):
@@ -37,3 +37,6 @@ class Book:
     @property
     def book_title(self):
         return self._book_title #Read title Only
+        
+    def __str__(self):
+        return self
