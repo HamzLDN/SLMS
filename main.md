@@ -25,7 +25,7 @@ class library:
     function remove_user(user):
         if the user exists in the users list, remove them and print a confirmation; otherwise, print a not-found message
 
-main:
+## main:
     create an instance of library
     create two book objects with titles and authors, then add them to the library
     create instances for member, librarian, and administrator, and add them to the library
