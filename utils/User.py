@@ -1,6 +1,6 @@
 class User:
     def __init__(self, fullname, user_type):
-        self._fullname = fullname
+        self._fullname = fullname #encapsulation
         self.user_type = user_type
         self._borrowed_books = []
 
