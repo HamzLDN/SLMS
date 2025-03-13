@@ -3,13 +3,12 @@ import hashlib
 import os
 
 class Signup:
-    def __init__(self, fullname, email, username, password, json_file='userdata/users.json'):
-        self.fullname = fullname
-        self.email = email
-        self.username = username
-        self.__password = hashlib.sha256(password.encode()).hexdigest()
+    def __init__(self, data, json_file='userdata/users.json'):
+        self.fullname = data['fullname']
+        self.email = data['email']
+        self.username = data['username']
+        self.__password = hashlib.sha256(data['password'].encode()).hexdigest()
         self.json_file = json_file
-
 
     def check_user(self):
         with open(self.json_file, 'r') as file:
@@ -19,7 +18,6 @@ class Signup:
             if self.username == users[ids]['username']:
                 print("username taken")
                 return True
-        
         return False
 
     def register(self):

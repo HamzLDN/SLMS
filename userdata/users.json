@@ -1,10 +1,15 @@
 {
     "1": {
-        "username": "admin",
-        "password": "2bb80d537b1da3e38bd30361aa855686bde0eacd7162fef6a25fe97bf527a25b"
+        "Role": "member",
+        "Full name": "hamza",
+        "email": "a",
+        "username": "a",
+        "password": "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb"
     },
     "2": {
-        "username": "test",
-        "password": "2bb80d537b1da3e38bd30361aa855686bde0eacd7162fef6a25fe97bf527a25b"
+        "Full name": "John Doe",
+        "email": "johndoe@example.com",
+        "username": "Saffie",
+        "password": "dda69783f28fdf6f1c5a83e8400f2472e9300887d1dffffe12a07b92a3d0aa25"
     }
 }
